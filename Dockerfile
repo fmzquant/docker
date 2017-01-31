@@ -11,6 +11,7 @@ RUN cd ta-lib && ./configure --prefix=/usr/ --libdir=/lib64 && make && make inst
 RUN easy_install -i http://mirrors.aliyun.com/pypi/simple/ pip
 RUN pip --no-cache-dir install --trusted-host mirrors.aliyun.com -i http://mirrors.aliyun.com/pypi/simple/ numpy TA-Lib
 RUN pip --no-cache-dir install --trusted-host mirrors.aliyun.com -i http://mirrors.aliyun.com/pypi/simple/ statsmodels scikit-learn hmmlearn pykalman arch matplotlib
+#RUN curl -L --retry 100 https://dn-botvs.qbox.me/v321/robot_linux_amd64.tar.gz | tar -C /usr/local/sbin/ -xvz
 RUN yum clean all
 RUN useradd noroot -u 1000 -s /bin/bash --no-create-home
 USER noroot
